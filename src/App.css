@@ -1,0 +1,152 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color:  bisque;
+}
+
+/* HEADER STYLING */
+.header {
+  background-color: whitesmoke;
+  position: fixed;
+  opacity: 90%;
+  top: 0;
+  width: 100%;
+  max-height: 20vh;
+  margin-bottom: 10px;
+  position: absolute;
+  z-index: 100;
+}
+
+.aasl-logo {
+  background-color: whitesmoke;
+  width: 15vh;
+  height: 100%;
+  float: left;
+  margin-left: 4vh;
+}
+
+.aasl-logo:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.header-title {
+  float: left;
+  margin-left: 1vh;
+}
+
+.header-text {
+  padding-left: 3vh;
+  justify-content: flex-start;
+}
+
+.hamburger-icon-div{
+  display: none;
+}
+
+.header-nav-items{
+  display: none;
+}
+
+@media (max-width: 767px){
+  .hamburger-icon-div {
+    display: inline;
+    float: right;
+    margin-top: 2vh;
+    scale: 1.5;
+    background: none;
+  }
+  
+  .hamburger-icon-div button {
+    background: none;
+  } 
+
+  .hamburger-menu {
+    display: inline;
+    background-color: beige;
+    border-radius: 10px;
+    border-color: gray;
+    margin-top: 15vh;
+    height: 100vh;
+    width: 50vh;
+    float: right;
+    position: absolute;
+  }
+
+  .menu-item {
+    list-style-type: none;
+  }
+
+  .menu-item a{
+    list-style-type: none;
+    color: green;
+    font-size: larger;
+  }
+}
+
+@media (min-width: 767px){
+  .header-nav-items{
+    float: right;
+    display: grid;
+    grid-template-columns: 75px 75px 75px 75px;
+    margin-right: 4vh;
+  }
+  
+  .nav-item{
+    list-style-type: none;
+  }
+
+  .nav-item a{
+    color: green;
+  }
+
+  .nav-item a:hover{
+    color:red;
+  }
+}
+
+
+/* BODY STYLING */
+
+.content-box{
+  background-color: bisque;
+  margin-top: 10px;
+}
+
+/* JUNK */
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
