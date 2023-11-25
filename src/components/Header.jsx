@@ -1,7 +1,8 @@
 import '../App.css'
 import aaslLogo from '../assets/aasl-logo.png'
 import hamburger from '../assets/hamburger.svg'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -24,18 +25,18 @@ function Header() {
        {menuIsOpen &&
             <div className='hamburger-menu'>
                 <ul className='header-menu-items'>
-                    <li className='menu-item'><a href="http://127.0.0.1:5173/">Home</a></li>
-                    <li className='menu-item'><a href="http://127.0.0.1:5173/">Stats</a></li>
-                    <li className='menu-item'><a href="http://127.0.0.1:5173/">Mission</a></li>
-                    <li className='menu-item'><a href="http://127.0.0.1:5173/">Contact</a></li>
+                    <li className='menu-item'><Link to="/">Home</Link></li>
+                    <li className='menu-item'><Link to="/stats">Stats</Link></li>
+                    <li className='menu-item'><Link to="/mission">Mission</Link></li>
+                    <li className='menu-item'><Link to="/contact">Contact</Link></li>
                 </ul>            
             </div>
         }
         <ul className='header-nav-items'>
-            <li className='nav-item' ><a href="http://127.0.0.1:5173/">Home</a></li>
-            <li className='nav-item' ><a href="http://127.0.0.1:5173/">Stats</a></li>
-            <li className='nav-item' ><a href="http://127.0.0.1:5173/">Mission</a></li>
-            <li className='nav-item' ><a href="http://127.0.0.1:5173/">Contact</a></li>
+            <li className='nav-item' ><Link to="/">Home</Link></li>
+            <li className='nav-item' ><Link to="/stats">Stats</Link></li>
+            <li className='nav-item' ><Link to="/mission">Mission</Link></li>
+            <li className='nav-item' ><Link to="/contact">Contact</Link></li>
         </ul>
 
     </div>
