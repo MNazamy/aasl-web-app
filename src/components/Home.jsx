@@ -1,33 +1,18 @@
-import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '../assets/vite.svg'
 import '../App.css'
+import winterLeagueFlyer from '../assets/winter_league_flier.jpg'
 
 function Home() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className='content-box'>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='home-page-container'>
+      <div className="something">
+        <h3>Welcome to the Afghan American Sports League (AASL) Website!</h3>
+        <p>Use this website for information on league statuses, and contact information!</p>
+        <p>League standings and schedules can be found in the 'Stats' section in the navigation</p>
       </div>
-      <h1>Homepage</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className='home-page-flier-div'>
+        <img className='home-page-flier' src={winterLeagueFlyer}/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }

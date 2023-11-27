@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '../assets/vite.svg'
+import {useState, useEffect} from 'react'
+import { Dropdown } from 'primereact/dropdown';
+import leagueOptions from '../data/leagueOptions';
 import '../App.css'
 
 function Stats() {
-  const [count, setCount] = useState(0)
+
+  const [selectedLeague, setSelectedLeague] = useState(null)
+
 
   return (
-    <div className='content-box'>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Stats</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <>
+    <h1 className='page-title ml-100'>League Stats and Schedules</h1>
+    <div className="stats-page-container">
+      <Dropdown 
+        value={selectedLeague} onChange={(e) => setSelectedLeague(e.value)} 
+        options={leagueOptions} optionLabel="label" 
+        placeholder="Select a League" className="dropdown"/>
+      {selectedLeague!=null && (
+        <div className="stats-container">
+          <div className="schedule">Schedule for {selectedLeague}</div>
+          <div className="standings">Standings</div>
+        </div>
+      )}
+
     </div>
+    </>
   )
 }
 

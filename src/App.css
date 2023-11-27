@@ -1,3 +1,6 @@
+body {
+  background-color: beige;
+}
 #root {
   width: 100%;
   margin: 0 auto;
@@ -8,22 +11,23 @@
 /* HEADER STYLING */
 .header {
   background-color: whitesmoke;
-  position: fixed;
   opacity: 90%;
   top: 0;
   width: 100%;
-  max-height: 20vh;
-  margin-bottom: 10px;
-  position: absolute;
+  height: auto;
+  position: fixed;
   z-index: 100;
+  display: grid;
+  grid-template-columns: 20vw 40vw 40vw;
 }
 
 .aasl-logo {
   background-color: whitesmoke;
-  width: 15vh;
-  height: 100%;
+  object-fit: contain;
   float: left;
-  margin-left: 4vh;
+  height: 15vh;
+  width: 20vw;
+  margin-left: 2vw; 
 }
 
 .aasl-logo:hover {
@@ -32,7 +36,12 @@
 
 .header-title {
   float: left;
-  margin-left: 1vh;
+  margin-left: 1vw;
+  color: black;
+  position:relative;
+  font-size: min(2vw,20px);
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 80%;
 }
 
 .header-text {
@@ -40,20 +49,22 @@
   justify-content: flex-start;
 }
 
+/* Navigation  Styling */
+
 .hamburger-icon-div{
   display: none;
 }
 
 .header-nav-items{
   display: none;
+  font-size: 3vh;
 }
 
 @media (max-width: 767px){
   .hamburger-icon-div {
     display: inline;
     float: right;
-    margin-top: 2vh;
-    scale: 1.5;
+    justify-self: center;
     background: none;
   }
   
@@ -61,20 +72,27 @@
     background: none;
   } 
 
-  .hamburger-menu {
-    display: inline;
+  .hamburger-menu {    
+    position: relative;
+    float: right;
+    top: 15vh;
     background-color: beige;
     border-radius: 10px;
     border-color: gray;
-    margin-top: 15vh;
     height: 100vh;
-    width: 50vh;
-    float: right;
-    position: absolute;
+    width:33vw;
+    
+  }
+
+  .hamburger-menu-items{
+    display: grid;
+    grid-template-columns: 1vw;
+    height: auto;
   }
 
   .menu-item {
     list-style-type: none;
+    float: left;
   }
 
   .menu-item a{
@@ -86,14 +104,19 @@
 
 @media (min-width: 767px){
   .header-nav-items{
-    float: right;
     display: grid;
-    grid-template-columns: 75px 75px 75px 75px;
-    margin-right: 4vh;
+    grid-template-columns: 22% 22% 28% 28%;
+    margin-right: 4vw;
+    margin-top: 1vw;
+    float: right;
+    width: 30vw;
   }
   
   .nav-item{
     list-style-type: none;
+    width: 100%;
+    font-size: min(2vw,30px);
+    float: right;
   }
 
   .nav-item a{
@@ -106,47 +129,134 @@
 }
 
 
-/* BODY STYLING */
+/* Body STYLING */
 
 .content-box{
-  background-color: bisque;
-  margin-top: 10px;
+  background-color: green;
+  position: absolute;
+  top: 15vh;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 90vw;
+  justify-items: center;
 }
 
-/* JUNK */
+.page-title{
+  font-size: min(4vw,35px)
+}
+/* Home Page */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.home-page-container{
+  margin-left: 10vw;
+  display: grid;
+  height: auto;
+  min-height: 100vh;
+  grid-template-columns: 25vw 70vw;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-page-flier-div{
+  float: right;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.home-page-flier{
+  float: right;
+  opacity: 90%;
+  height: 150vh;
+  max-width: 60vw;
 }
 
-.card {
-  padding: 2em;
+/* Stats Page */
+
+.stats-page-container{
+  justify-items: center;
+  margin-left: 10vw;
+  display: grid;
+  height: auto;
+  min-height: 90vh;
+  grid-template-rows: 15% 85%;
+  background-color:green;
 }
 
-.read-the-docs {
-  color: #888;
+.stats-container{
+  display: grid;
+  grid-template: 45vw 45vw;
+}
+
+.dropdown{
+ float: top;
+ outline: 1cm;
+ padding-left: 1vw;
+ padding-right: 1vw;
+ opacity: 50%;
+ color: black; 
+ background-color: white;
+ height: fit-content;
+ min-width: fit-content;
+ max-width: 33vw;
+ font-size: auto;
+}
+
+.p-dropdown-item{
+  color: black;
+  background-color: white;
+  opacity: 50%;
+}
+
+.p-dropdown-label{
+  font-size: min(5vh,20px);
+  background-color: whitesmoke;
+  opacity:100%;
+}
+
+.schedule{
+  outline: 1cm;
+  outline-color: black;
+}
+
+.standings{
+  outline: 1cm;
+  outline-color: black;
+}
+/* Mission Page */
+
+.mission-page-container{
+  justify-items: center;
+  margin-left: 10vw;
+  display: grid;
+  height: auto;
+  grid-template-columns: 75vw;
+}
+
+.youth-photo{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-left: 25vh;
+  opacity: 75%;
+  display:inline-block;
+  width: 50vw;
+  height:70vh;
+}
+
+/* Contact Page */
+
+.contact-info{
+  width: 70vw;
+  height: auto;
+  min-height: 100vh;
+  margin-left: 10vw;
+}
+
+.contact-method-list{
+  display: grid;
+  grid-template-columns: 8vw 8vw 8vw 8vw;
+  margin-left: 25%;
+  justify-self: center;
+}
+
+.contact-method img{
+  height: 5vw;
+  width: 5vw;
+  margin-right: 2vw;
 }
