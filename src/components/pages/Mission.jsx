@@ -1,6 +1,5 @@
-import youthPhoto from '../assets/youth_adults.svg'
-
-import '../App.css'
+import '../../App.css'
+import youthPhoto from '../../assets/youth_adults.svg'
 
 function Mission() {
 

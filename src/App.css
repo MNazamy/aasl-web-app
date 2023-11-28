@@ -39,7 +39,7 @@ body {
   margin-left: 1vw;
   color: black;
   position:relative;
-  font-size: min(2vw,20px);
+  font-size: min(3vw,20px);
   font-family: Arial, Helvetica, sans-serif;
   opacity: 80%;
 }
@@ -60,99 +60,30 @@ body {
   font-size: 3vh;
 }
 
-@media (max-width: 767px){
-  .hamburger-icon-div {
-    display: inline;
-    float: right;
-    justify-self: center;
-    background: none;
-  }
-  
-  .hamburger-icon-div button {
-    background: none;
-  } 
-
-  .hamburger-menu {    
-    position: relative;
-    float: right;
-    top: 15vh;
-    background-color: beige;
-    border-radius: 10px;
-    border-color: gray;
-    height: 100vh;
-    width:33vw;
-    
-  }
-
-  .hamburger-menu-items{
-    display: grid;
-    grid-template-columns: 1vw;
-    height: auto;
-  }
-
-  .menu-item {
-    list-style-type: none;
-    float: left;
-  }
-
-  .menu-item a{
-    list-style-type: none;
-    color: green;
-    font-size: larger;
-  }
-}
-
-@media (min-width: 767px){
-  .header-nav-items{
-    display: grid;
-    grid-template-columns: 22% 22% 28% 28%;
-    margin-right: 4vw;
-    margin-top: 1vw;
-    float: right;
-    width: 30vw;
-  }
-  
-  .nav-item{
-    list-style-type: none;
-    width: 100%;
-    font-size: min(2vw,30px);
-    float: right;
-  }
-
-  .nav-item a{
-    color: green;
-  }
-
-  .nav-item a:hover{
-    color:red;
-  }
-}
-
-
 /* Body STYLING */
 
 .content-box{
   background-color: green;
   position: absolute;
-  top: 15vh;
+  top: 15%;
   width: 100%;
   height: auto;
   display: grid;
   grid-template-columns: 90vw;
-  justify-items: center;
+  justify-content: center;
 }
 
 .page-title{
   font-size: min(4vw,35px)
 }
+
 /* Home Page */
 
 .home-page-container{
-  margin-left: 10vw;
   display: grid;
   height: auto;
   min-height: 100vh;
-  grid-template-columns: 25vw 70vw;
+  grid-template-columns: 35vw 55vw;
 }
 
 .home-page-flier-div{
@@ -164,14 +95,14 @@ body {
   float: right;
   opacity: 90%;
   height: 150vh;
-  max-width: 60vw;
+  max-width: 50vw;
 }
+
 
 /* Stats Page */
 
 .stats-page-container{
   justify-items: center;
-  margin-left: 10vw;
   display: grid;
   height: auto;
   min-height: 90vh;
@@ -205,7 +136,7 @@ body {
 }
 
 .p-dropdown-label{
-  font-size: min(5vh,20px);
+  font-size: min(5vh,15px);
   background-color: whitesmoke;
   opacity:100%;
 }
@@ -222,8 +153,7 @@ body {
 /* Mission Page */
 
 .mission-page-container{
-  justify-items: center;
-  margin-left: 10vw;
+  justify-content: center;
   display: grid;
   height: auto;
   grid-template-columns: 75vw;
@@ -241,22 +171,142 @@ body {
 
 /* Contact Page */
 
-.contact-info{
-  width: 70vw;
+.contact-page-container{
+  width: 90%;
   height: auto;
   min-height: 100vh;
-  margin-left: 10vw;
+  justify-self: center;
 }
 
 .contact-method-list{
   display: grid;
-  grid-template-columns: 8vw 8vw 8vw 8vw;
-  margin-left: 25%;
-  justify-self: center;
+  grid-template-columns: 18vw 18vw 18vw 18vw;
+  justify-content: center;
 }
 
 .contact-method img{
-  height: 5vw;
-  width: 5vw;
-  margin-right: 2vw;
+  height: 8vw;
+  width: 8vw;
+
+}
+
+
+/* Mobile View Only */
+@media (max-width: 767px){
+
+    /* HEADER STYLING */
+  .header {
+    height: 10vh;
+    grid-template-columns: 20vw 50vw 30vw;
+  }
+
+
+  .aasl-logo {
+    background-color: whitesmoke;
+    float: left;
+    height: 10vh;
+    width: 13vw;
+    margin-left: 2vw; 
+  }
+ 
+  .content-box{
+    grid-template-columns: 100vw;
+    top: 10vh;
+  }
+  
+  .hamburger-icon-div {
+    display: block;
+    background: none;
+  }
+  
+  .hamburger-icon-div button {
+    background: none;
+  } 
+  
+  .hamburger-icon{
+    object-fit: cover;
+  }
+
+  .hamburger-menu {    
+    position:fixed;
+    margin-left: 67vw;
+    top: 10vh;
+    background-color: beige;
+    border-bottom: 10px;
+    border-color: gray;
+    height: 100vh;
+    width:33vw;
+  }
+
+  .hamburger-menu-items{
+    height: auto;
+  }
+
+  .menu-item {
+    list-style-type: none;
+  }
+
+  .menu-item a{
+    color: green;
+    font-size: larger;
+  }
+
+  .menu-item a:hover{
+    color: red;
+  }
+
+  .home-page-container{
+    margin-left: 10vw;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .home-page-flier-div{
+    height: auto;
+    margin-left: 10vw
+  }
+
+  .home-page-text{
+    float: right;
+  }
+
+  .home-page-flier{
+    float: right;
+    opacity: 90%;
+    min-width: 100%;
+  }
+
+  .contact-method img{
+    height: 10vw;
+    width: 10vw;
+  }
+
+
+}
+
+/* Desktop View Only */
+@media (min-width: 767px){
+  .header-nav-items{
+    display: grid;
+    grid-template-columns: 22% 22% 28% 28%;
+    margin-right: 4vw;
+    margin-top: 1vw;
+    float: right;
+    width: 30vw;
+  }
+  
+  .nav-item{
+    list-style-type: none;
+    width: 100%;
+    font-size: min(2vw,30px);
+    float: right;
+  }
+
+  .nav-item a{
+    color: green;
+  }
+
+  .nav-item a:hover{
+    color:red;
+  }
 }

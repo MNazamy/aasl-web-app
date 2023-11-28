@@ -1,7 +1,7 @@
+import '../../App.css'
 import {useState, useEffect} from 'react'
 import { Dropdown } from 'primereact/dropdown';
-import leagueOptions from '../data/leagueOptions';
-import '../App.css'
+import leagueOptions from '../../data/leagueOptions';
 
 function Stats() {
 

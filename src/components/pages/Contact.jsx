@@ -1,15 +1,15 @@
-import '../App.css'
-import emailIcon from '../assets/icons/email.svg'
-import instagramIcon from '../assets/icons/instagram.svg'
-import facebookIcon from '../assets/icons/facebook.png'
-import whatsappIcon from '../assets/icons/whatsapp.svg'
+import '../../App.css'
+import emailIcon from '../../assets/icons/email.svg'
+import instagramIcon from '../../assets/icons/instagram.svg'
+import facebookIcon from '../../assets/icons/facebook.png'
+import whatsappIcon from '../../assets/icons/whatsapp.svg'
 
 function Contact() {
 
   return (
-      <div className='contact-info'>
+      <div className='contact-page-container'>
         <h1 className='page-title'>Contact Us / Sign Up</h1>
-        <h5 style={{"font-size": "min(2.5vw,20px"}}>Please follow us on social media & WhatsApp for the latest and greatest on all things AASL related.</h5>
+        <h5 style={{"font-size": "min(3vw,20px", "color":"beige"}}>Please follow us on social media & join our WhatsApp group for the latest and greatest on all things AASL related.</h5>
         
         <div className='contact-method-list'>
           <a className="contact-method" style={{color:'darkblue'}} href="https://chat.whatsapp.com/EjR6zszj3osAsVmzqoLQJw"><img className='contact-icon' src={whatsappIcon}/></a>  

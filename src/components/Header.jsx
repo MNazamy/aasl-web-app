@@ -3,8 +3,7 @@ import aaslLogo from '../assets/aasl-logo.png'
 import hamburger from '../assets/icons/hamburger.svg'
 import { Link } from "react-router-dom";
 
-
-function Header( {menuIsOpen, setMenuIsOpen, toggleMenu} ) {
+function Header( {toggleMenu} ) {
 
 
     return(
