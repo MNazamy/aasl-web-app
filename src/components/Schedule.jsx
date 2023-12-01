@@ -36,7 +36,7 @@ function Schedule(league){
                             })
                             }
                         </div>
-                        {matchweek?.bye?.length>1 &&
+                        {matchweek?.bye?.length>0 &&
                             <div className='matchweek-byes'>
                                 <p className='bye'><u>Byes:   </u></p>
                                 {matchweek.bye.map( team => <p className='bye' key={team}><i>{team}</i></p>)}

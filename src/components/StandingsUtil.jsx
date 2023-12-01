@@ -3,7 +3,7 @@ import soccerSchedule from '../data/soccerSchedule'
 
 const basketballTeams = ["Prodigy", "Squad UP", "Scary Hours", "Synergy Hoops", "Empire", "Jersey Elite", "Monstarz", "Kandahar Kingz", "Queens Finest", "Badri313", "Bullets"]
 
-const soccerTeams = ["Brishna Youth 1", "Brishna Youth 2", "Lapis Leopards", "Zalzala FC", "Ittihad Sambas", "Aria Kabob"]
+const soccerTeams = ["Brishna FC", "Brishna Youth 1", "Brishna Youth 2", "Lapis Leopards", "Zalzala FC", "Ittihad Samba", "Aria Kabab"]
 
 
 export function calculateStandings(league) {

@@ -341,7 +341,7 @@ const basketballSchedule = [
         bye: []
     },
     {
-        week: "CHAMPIONSHIP: 12/09",
+        week: "CHAMPIONSHIP: 03/02/24",
         completed: false,
         matches: [
             {
