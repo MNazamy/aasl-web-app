@@ -16,7 +16,7 @@ function Header( {toggleMenu} ) {
         </div>
         <div className='hamburger-icon-div'>
             <button onClick={toggleMenu}>
-                <img src={hamburger} className = 'hamburger-icon'/>
+                <img src={hamburger} className='hamburger-icon'/>
             </button>
         </div>
 

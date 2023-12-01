@@ -14,7 +14,7 @@ function Contact() {
         <div className='contact-method-list'>
           <a className="contact-method" style={{color:'darkblue'}} href="https://chat.whatsapp.com/EjR6zszj3osAsVmzqoLQJw"><img className='contact-icon' src={whatsappIcon}/></a>  
           <a className="contact-method" style={{color:'darkblue'}} href="https://www.instagram.com/aasl_official/"><img className='contact-icon' src={instagramIcon}/></a>
-          <a className="contact-method"  style={{color:'darkblue'}} href="https://www.facebook.com/afghanamericansportsleague"><img className='contact-icon' src={facebookIcon}/></a>
+          <a className="contact-method" style={{color:'darkblue'}} href="https://www.facebook.com/afghanamericansportsleague"><img className='contact-icon' src={facebookIcon}/></a>
           <a className="contact-method" style={{color:'darkblue'}} href="mailto:afghanamericansoccer@gmail.com"><img className='contact-icon' src={emailIcon}/></a>
 
         </div>

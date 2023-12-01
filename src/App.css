@@ -103,16 +103,15 @@ body {
 
 .stats-page-container{
   justify-items: center;
-  display: grid;
   height: auto;
-  min-height: 90vh;
-  grid-template-rows: 15% 85%;
-  background-color:green;
+  min-height: 100vh;
+  margin-bottom: 2vh;
 }
 
 .stats-container{
+  margin-top: 2vh;
   display: grid;
-  grid-template: 45vw 45vw;
+  grid-template-columns: 45vw 45vw;
 }
 
 .dropdown{
@@ -141,14 +140,122 @@ body {
   opacity:100%;
 }
 
-.schedule{
-  outline: 1cm;
-  outline-color: black;
+.standings-table{
+  outline: 0.5vh;
+  outline-style: groove;
+  outline-color: whitesmoke;
+  justify-items: center;
+  width: 80%;
+  height: auto;
+  padding: 1vh;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  margin-left:10%;
+  background-color: teal;
+  opacity: 95%;
+  justify-self: center;
 }
 
-.standings{
-  outline: 1cm;
-  outline-color: black;
+.schedule-table{
+  outline: 0.2vh;
+  outline-style: groove;
+  outline-color: whitesmoke;
+  justify-items: center;
+  width: 90%;
+  height: auto;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  margin-left:10%;
+  background-color: teal;
+  opacity: 95%;
+  justify-self: center;
+  min-height: 40vh;
+}
+
+.standing-row{
+  display: grid;
+  justify-items: left;
+  margin-left: 1vw;
+  width: 100%;
+  grid-gap: 2vw;
+  font-size: medium;
+}
+.basketball-standing-row{
+  grid-template-columns: 5vw 2vw 5vw 2vw 2vw 2vw;
+}
+
+.soccer-standing-row{
+  grid-template-columns: 5vw 2vw 2vw 5vw 2vw 2vw 2vw;
+}
+
+.schedule-row{
+  display: grid;
+  justify-items: left;
+  margin-left: 1vw;
+  width: 100%;
+  grid-template-columns: 8vw 12vw 6vw 12vw;
+  height:auto;
+}
+
+
+.header-row{
+  font-weight: bolder;
+}
+
+.matchweek{
+  color: white;
+  justify-content: left;
+  font-size: medium;
+  float: left;
+  font-weight: bold;;
+  margin-left: 2vw;
+  margin-bottom: 1vh;
+  margin-top: 0.5vh;
+  text-decoration: solid;
+  text-decoration-line:underline;
+}
+
+.matchweek-box{
+  height: auto;
+  width: 100%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+
+}
+
+.matchweek-box:nth-child(even){
+  background: darkcyan;
+}
+
+.standing-row:nth-child(even){
+  background: darkcyan;
+}
+
+.match-fixture{
+  display: grid;
+  grid-template-columns: 10vw 20vw 10vw 20vw;
+}
+
+.matchweek-title{
+  height: auto;
+}
+
+
+
+
+.matchweek-byes{
+  width: 100%;
+  justify-items: left;
+  font-size: 0.75w;
+  height: auto;
+  display: grid;
+  margin-top: 1vh;
+  grid-template-columns: 5vw auto auto auto auto;
+}
+
+.bye{
+  color: lightblue;
+  margin-left: 2vw;
 }
 /* Mission Page */
 
@@ -157,6 +264,8 @@ body {
   display: grid;
   height: auto;
   grid-template-columns: 75vw;
+  justify-self: center;
+  justify-items: center;
 }
 
 .youth-photo{
@@ -165,8 +274,7 @@ body {
   margin-left: 25vh;
   opacity: 75%;
   display:inline-block;
-  width: 50vw;
-  height:70vh;
+  width: 100vw;
 }
 
 /* Contact Page */
@@ -262,6 +370,7 @@ body {
   }
 
   .home-page-flier-div{
+    display: none;
     height: auto;
     margin-left: 10vw
   }
@@ -281,6 +390,50 @@ body {
     width: 10vw;
   }
 
+  .youth-photo{
+    opacity: 75%;
+    justify-self: center;
+    width: 100vw;
+  }
+
+  .stats-container{
+    grid-template-columns: 90vw;
+  }
+
+  .standing-row{
+    display: grid;
+    justify-items: left;
+    grid-gap: 2vw;
+    font-size: 50%;
+  }
+
+  .basketball-standing-row{
+    grid-template-columns: 20vw 8vw 10vw 8vw 8vw 8vw;
+  }
+  
+  .soccer-standing-row{
+    grid-template-columns: 20vw 8vw 8vw 10vw 5vw 5vw 5vw;
+  }
+  
+  .schedule-row{
+    display: grid;
+    justify-items: left;
+    grid-template-columns: 15vw 20vw 10vw 20vw;
+    grid-gap: 2vw;
+    height:3vh;
+    font-size: 50%;
+  }
+
+  .matchweek-byes{
+    display: grid;
+    margin-top: 1vh;
+    grid-template-columns: 15vw 15vw 15vw 15vw;
+  }
+  
+  .bye{
+    font-size: 50%;
+    float: center;
+  }
 
 }
 
