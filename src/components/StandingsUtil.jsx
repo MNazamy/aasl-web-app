@@ -136,14 +136,14 @@ export function sortSoccer( teamA, teamB){
         else if (teamB.diff > teamA.diff) return 1
         else{
 
-            // third tiebreaker -- goals scored
-            if(teamA.scored > teamB.scored) return -1
-            else if (teamB.scored > teamA.scored) return 1
+            // third tiebreaker -- goals conceded
+            if(teamA.conceded < teamB.conceded) return -1
+            else if (teamB.conceded < teamA.conceded) return 1
             else {
 
-                // fourth tiebreaker -- goals conceded
-                if(teamA.conceded > teamB.conceded) return -1
-                else if (teamB.conceded > teamA.conceded) return 1
+                // fourth tiebreaker -- goals scored
+                if(teamA.scored > teamB.scored) return -1
+                else if (teamB.scored > teamA.scored) return 1
             }
         }
     }
