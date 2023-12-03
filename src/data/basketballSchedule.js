@@ -1,36 +1,37 @@
 const basketballSchedule = [
     {
         week: "Week 1: 12/02/23",
-        completed: false,
+        completed: true,
         matches: [
             {
                 home: "Prodigy",
                 away: "Squad UP",
                 time: "4:30PM",
-                score: null
+                score: "48-54"
             },
             {
                 home: "Scary Hours",
                 away: "Synergy Hoops",
                 time: "5:30PM",
-                score: null
+                score: "56-60"
             },
             {
                 home: "Empire",
                 away: "Jersey Elite",
                 time: "6:30PM",
-                score: null
+                score: "38-62"
             },
             {
                 home: "Monstarz",
                 away: "Kandahar Kingz",
                 time: "6:30PM",
-                score: null  
+                score: "56-71"
             }
         ],
         bye: ["Queens Finest", "Badri313", "Bullets"]
     },
     {
+
         week: "Week 2: 12/09/23",
         completed: false,
         matches: [
