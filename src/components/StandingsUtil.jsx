@@ -26,6 +26,7 @@ export function calculateStandings(league) {
             avgConceded: 0.0,
             winPercentage: 0.0,
             avgDiff: 0.0,
+            numForfeitGames: 0,
                 // soccer stats
             diff: 0,
             points: 0,
@@ -47,33 +48,55 @@ export function calculateStandings(league) {
             const awayTeam = String(match.away)
 
 
-            // add points for each team
-            const points = match.score.split('-')
-            const homePointsScored = parseInt(points[0])
-            const awayPointsScored = parseInt(points[1])
-
-            teamStats[homeTeam].scored += homePointsScored
-            teamStats[homeTeam].conceded += awayPointsScored
-
-            teamStats[awayTeam].scored += awayPointsScored
-            teamStats[awayTeam].conceded += homePointsScored
-
-            // add win/losses/ties
-            if (homePointsScored > awayPointsScored){
+            // check for forfeit
+            if( match.score == 'FF-Home' ){
                 teamStats[homeTeam].numWins +=1
-                teamStats[awayTeam].numLosses +=1  
+                teamStats[awayTeam].numLosses +=1
+
+                teamStats[homeTeam].numForfeitGames +=1
+                teamStats[awayTeam].numForfeitGames +=1
+
                 teamStats[homeTeam].teamsBeat.push(awayTeam)
             }
-            else if (homePointsScored < awayPointsScored){
-                teamStats[awayTeam].numWins +=1  
+            else if( match.score == 'FF-Away' ){
+                teamStats[awayTeam].numWins +=1
                 teamStats[homeTeam].numLosses +=1
+
+                teamStats[homeTeam].numForfeitGames +=1
+                teamStats[awayTeam].numForfeitGames +=1
+
                 teamStats[awayTeam].teamsBeat.push(homeTeam)
+            } else {
+                    // add points for each team
+                const points = match.score.split('-')
+                const homePointsScored = parseInt(points[0])
+                const awayPointsScored = parseInt(points[1])
+    
+                teamStats[homeTeam].scored += homePointsScored
+                teamStats[homeTeam].conceded += awayPointsScored
+    
+                teamStats[awayTeam].scored += awayPointsScored
+                teamStats[awayTeam].conceded += homePointsScored
+    
+                // add win/losses/ties
+                if (homePointsScored > awayPointsScored){
+                    teamStats[homeTeam].numWins +=1
+                    teamStats[awayTeam].numLosses +=1  
+                    teamStats[homeTeam].teamsBeat.push(awayTeam)
+                }
+                else if (homePointsScored < awayPointsScored){
+                    teamStats[awayTeam].numWins +=1  
+                    teamStats[homeTeam].numLosses +=1
+                    teamStats[awayTeam].teamsBeat.push(homeTeam)
+    
+                }
+                else {
+                    teamStats[homeTeam].numTies +=1
+                    teamStats[awayTeam].numTies +=1
+                }
 
             }
-            else {
-                teamStats[homeTeam].numTies +=1
-                teamStats[awayTeam].numTies +=1
-            }
+            
         })
 
     })
@@ -84,12 +107,12 @@ export function calculateStandings(league) {
     // iterate through each team to compute more metrics and push to standings array
     Object.keys(teamStats).forEach( team => {
         teamStats[team].matchesPlayed = teamStats[team].numWins + teamStats[team].numLosses + teamStats[team].numTies
-
+        const nonForfeitedGames = teamStats[team].matchesPlayed - teamStats[team].numForfeitGames
         teamStats[team].diff = teamStats[team].scored - teamStats[team].conceded
 
         // stats used for basketball
-        teamStats[team].avgScored = teamStats[team].scored/teamStats[team].matchesPlayed || 0
-        teamStats[team].avgConceded = teamStats[team].conceded/teamStats[team].matchesPlayed || 0
+        teamStats[team].avgScored = (teamStats[team].scored/nonForfeitedGames).toFixed(1) || 0
+        teamStats[team].avgConceded = (teamStats[team].conceded/nonForfeitedGames).toFixed(1) || 0  
         teamStats[team].avgDiff =  teamStats[team].avgScored - teamStats[team].avgConceded
         teamStats[team].winPercentage = teamStats[team].numWins/teamStats[team].matchesPlayed
         teamStats[team].points =  3*teamStats[team].numWins + teamStats[team].numTies
