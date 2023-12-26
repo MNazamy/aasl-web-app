@@ -21,10 +21,10 @@ function Header( {toggleMenu} ) {
         </div>
 
         <ul className='header-nav-items'>
-            <li className='nav-item' ><Link to="/">Home</Link></li>
+            <li className='nav-item' ><Link to="/career">Career</Link></li>
             <li className='nav-item' ><Link to="/stats">Stats</Link></li>
             <li className='nav-item' ><Link to="/mission">Mission</Link></li>
-            <li className='nav-item' ><Link to="/contact">Contact</Link></li>
+            <li className='nav-item' ><Link to="/contact">Contact</Link></li>    
         </ul>
 
     </div>

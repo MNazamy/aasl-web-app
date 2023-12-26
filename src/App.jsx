@@ -6,6 +6,8 @@ import Home from './components/pages/Home'
 import Mission from './components/pages/Mission'
 import Stats from './components/pages/Stats'
 import Contact from './components/pages/Contact'
+import Career from './components/pages/Career'
+
 import { useState } from 'react'
 
 import {
@@ -24,8 +26,9 @@ function App() {
         <Routes>
           <Route path = "/stats" element={<Stats/>} />
           <Route path = "/mission" element={<Mission />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Home />} />
+          <Route path = "/contact" element={<Contact />} />
+          <Route path = "/career" element={<Career />} />
+          <Route path = "/" element={<Home />} />
         </Routes>
       </div>
       {menuIsOpen && <HamburgerMenu toggleMenu={toggleMenu}/>}
