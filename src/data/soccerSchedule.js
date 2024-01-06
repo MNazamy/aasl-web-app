@@ -76,25 +76,25 @@ const soccerSchedule = [
     },
     {
         week: "Week 4: 01/06/24",
-        completed: false,
+        completed: true,
         matches: [
             {
                 home: "Lapis Leopards",
                 away: "Zalzala FC",
                 time: "11:00AM",
-                score: null,
+                score: "3-1",
             },
             {
                 home: "Brishna Youth 1",
                 away: "Ittihad Samba",
                 time: "12:00PM",
-                score: null,                
+                score: "4-0",                
             },
             {
                 home: "Brishna FC",
                 away: "Aria Kabab",
                 time: "1:00PM",
-                score: null,
+                score: "5-0",
             }
         ],
         bye: ["Brishna Youth 2"]
